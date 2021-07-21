@@ -33,64 +33,19 @@ T * ta(T a[], int n) {
 	return a;
 }
 
-void solution(int a, int b, int n)
-{
-	// traverse for all possible values
-	for (int i = 0; i * a <= n; i++) {
-
-		// check if it is satisfying the equation
-		if ((n - (i * a)) % b == 0) {
-			cout << "YES" << nl;
-			return;
-		}
-	}
-
-	cout << "NO" << nl;
-}
-
 int32_t main()
 {
 
 	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
 	///////////////////////////////////////////////////////<<CODE BEGIN HERE>>
-
 	W(t) {
-		int n; cin >> n;
-		int a[n + 1];
-		map<int, vector<int>> m;
-		map<int, bool> visited;
-		fr(i, 1, n + 1) {
-			cin >> a[i];
-			m[a[i]].pb(i);
-			m[a[i]] = false;
-		}
-		int ans = 0;
+		int n, m, i, j; cin >> n >> m >> i >> j;
 
-		fr(i, 1, n + 1) {
-			int k = m[a[i]].size();
-			m[a[i]] = true;
-			if (k != 1 && m[a[i]] == false)
-				ans = ans + (k * (k - 1)) / 2;
-			int past = 0, fut = 0, curr = 0;
-			for (auto j = 0; j < k - 1; j++) {
-				if (a[i + 1] - a[i] > 1) {
-					if (curr == 0) {
-						curr = j; continue;
-					}
-					if (fut == 0) {
-						fut = j; continue;
-					}
-					ans += (fut - past)*
-				}
-			}
-		}
-
-		cout << ans << nl;
+		cout << 1 << " " << 1 << " " << n << " " << m << nl;
 	}
 
-
-//////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////
 	return 0;
 }
 
