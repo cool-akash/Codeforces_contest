@@ -57,40 +57,11 @@ int32_t main()
 
 	W(t) {
 		int n; cin >> n;
-		int a[n + 1];
-		map<int, vector<int>> m;
-		map<int, bool> visited;
-		fr(i, 1, n + 1) {
-			cin >> a[i];
-			m[a[i]].pb(i);
-			m[a[i]] = false;
-		}
-		int ans = 0;
-
-		fr(i, 1, n + 1) {
-			int k = m[a[i]].size();
-			m[a[i]] = true;
-			if (k != 1 && m[a[i]] == false)
-				ans = ans + (k * (k - 1)) / 2;
-			int past = 0, fut = 0, curr = 0;
-			for (auto j = 0; j < k - 1; j++) {
-				if (a[i + 1] - a[i] > 1) {
-					if (curr == 0) {
-						curr = j; continue;
-					}
-					if (fut == 0) {
-						fut = j; continue;
-					}
-					ans += (fut - past)*
-				}
-			}
-		}
-
-		cout << ans << nl;
+		solution(11, 111, n);
 	}
-
 
 //////////////////////////////////////////////////////////////////////////
 	return 0;
 }
 
+ 
